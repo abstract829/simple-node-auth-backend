@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:4000/api/users";
+const apiURL = "https://dapp-production.up.railway.app/api/users";
 
 $(document).ready(async () => {
   const validateToken = async () => {

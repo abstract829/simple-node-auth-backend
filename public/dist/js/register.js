@@ -1,5 +1,5 @@
 $(document).ready(async () => {
-  let apiURL = "http://localhost:4000/api/users";
+  let apiURL = "https://dapp-production.up.railway.app/api/users";
   const isAdmin = async () => {
     const token = localStorage.getItem("token");
     if (token) {

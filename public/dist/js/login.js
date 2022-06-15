@@ -1,4 +1,4 @@
-let apiURL = "http://localhost:4000/api/users";
+let apiURL = "https://dapp-production.up.railway.app//api/users";
 
 $(document).ready(async () => {
   $("#login-button").on("click", async () => {
