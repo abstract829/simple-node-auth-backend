@@ -1,0 +1,265 @@
+
+body{
+  background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #000000, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.error-msg{
+  color:red
+}
+.register-msg{
+  color: yellow;
+}
+
+.dark-mode .content-wrapper {
+  background-color: #000000;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {   
+  font-family: "Poppins", sans-serif;
+  color:#ECCB0D !important;
+}
+.navbar-dark {
+  background-color: #000000;
+  border-color: #000000;
+}
+.brand-link{
+  color: #f2f2f2;
+}
+.badge-warning {
+  color: #ffffff !important;
+}
+.badge.badge-warning.saldo{
+  font-size: 3em;
+} 
+.products-list .product-info {
+  margin-left: 0px !important;
+}
+.caja-saldo{
+  margin-bottom: 40px;
+}
+.btn-app {   
+  margin: 0px !important;   
+  width: 100% !important;
+}
+.info a{
+  color: #b7c4d3;
+}
+.info a:hover{
+  color: #000000;
+}
+.btn-app> i{
+  display: block;
+  font-size: 25px;
+}
+ 
+.card-body, .card-header, .dark-mode .card, .dark-mode .info-box{
+  background-color: #001530;
+}
+.dark-mode .info-box{
+  background-color: #000000;
+}
+.card-body.p-3{
+  background-color: #000000;
+  border-radius: 9px;
+  border: 1px solid;
+}
+.dark-mode .products-list>.item {
+  background-color: #000000;   
+  border-bottom-color: #6c757d;
+}
+.cripto {
+  background-color: #000000;
+  border: 1px solid #ECCB0D;   
+  border-radius: 10px;
+  padding: 20px;
+}
+.dark-mode .card .card-footer {
+  background-color: #000000 !important;
+  border-radius: 9px !important;
+}
+.login-box-msg, .register-box-msg {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+ 
+.card-body p, [class*=icheck-]>label, .card-body a{
+  color: #fbfbfb;
+}
+.card-title {
+  float: none;
+  font-size: 2rem;
+  font-weight: 900;
+   
+}
+.descripcion{
+  display: flex;
+  justify-content: space-between;
+}
+.brand-cripto{
+  width: 20%;
+  padding-bottom: 20px;
+  display: flex;
+  margin: 0 auto;
+  height: 65%;
+}
+.card-title.text-center span{
+  background-color: #000000;
+  padding: 0 0.3em;
+  position: relative;
+}
+.card-title.text-center::before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:0;
+  top: 50%;
+  width: 97%;
+  border-bottom: 3px solid #fff;
+}
+
+/*********************
+/*Login
+/*****************/
+
+.caja-principal{
+  height: 100%;
+}
+.login-box-msg, .register-box-msg {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+.registrar{
+  border-radius: 16px;
+  background-color:#fdc202 !important;
+  border-color: #fdc202;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.navegacion, .pie{
+  padding-right: 0px !important;
+  padding-left: 0px !important; 
+}
+.login-box, .register-box {
+  width: 450px;
+}
+.navegacion{
+  margin-top: 0px; 
+ }  
+ .navegacion, .pie{
+   padding-right: 0px !important;
+   padding-left: 0px !important; 
+ }
+ .login-box, .register-box {
+   width: 600px;   
+ }
+ .login-box  {   
+   margin-top: 5px;
+   margin-left: 20%;
+ }
+ .zona1{
+   background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECCB0D, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECCB0D, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+ }
+ .zona2{
+   background-color: #000000;
+   background: url('../../img/bg_zona2.png');
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+   height: 780px;
+ }
+ /*********************
+/* Footer
+/*****************/
+.el-footer {
+  background-color: #000000;
+  border-top: none;
+  color: #ECCB0D;
+  padding: 2rem;
+}
+.el-footer a{
+  color:#f2f2f2;
+}
+@media (max-width: 767.98px) { 
+  .caja-principal {     
+    font-size: 1.2rem;
+}
+  .border-right.usuario{
+    border-right: none !important;
+  }
+  .accion{     
+    height: 64px;
+    margin: 2px 1px 0px 1px !important;
+    min-width: 66px;
+    padding: 13px 10px;    
+  }
+  .info-box {
+    padding: 5px;
+  }
+.caja-saldo .badge.badge-warning.saldo{
+  white-space: unset;
+  font-size: 2.5em;
+}
+.card-title.text-center::before {
+  width: 90%;
+}
+  .login-box{    
+    margin: 24px 0px;
+  }
+  .register-box {    
+    margin: 0px;
+  }
+  .login-box, .register-box {
+    width: 100%;
+  } 
+  .zona2{
+    display: none;
+  }
+  .registrar {   
+    font-size: 1.2rem;
+  }
+  .form-control {  
+    height: calc(2.25rem + 20px);
+  }
+  .form-control,.fa, .fas  {  
+    font-size: 1.2rem;   
+  }
+}
+/*Medium devices (tablets, less than 992px)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .caja-principal {     
+    font-size: 2rem;
+}
+  .login-box, .register-box {     
+    height: 800px;
+  } 
+  .login-box {
+    width: 80%;    
+  } 
+  .register-box {
+    width: 100%;
+  }
+  .zona2{
+    display: none;
+  }
+  .login-box {
+    margin-top: 140px;
+    margin-left: 12%;
+    margin-bottom: 80px;
+}
+.registrar {   
+  font-size: 2rem;
+}
+.form-control {  
+  height: calc(2.25rem + 29px);
+}
+.form-control,.fa, .fas {  
+  font-size: 1.5rem;   
+}
+ 
+}
