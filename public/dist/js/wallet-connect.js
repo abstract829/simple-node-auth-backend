@@ -1,4 +1,7 @@
 $(document).ready(async () => {
+  const exchangeAddress = "0xda9c9157f7859fb83de0fabf7776554d35599ba7";
+  const tokenAddress = "0xa2a5ee61e6a0c993fb5060fa7b8270cc2cdc7c08";
+  const busdAddress = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
   const setInitialData = () => {
     const email = localStorage.getItem("email");
     const name = localStorage.getItem("name");
@@ -11,10 +14,7 @@ $(document).ready(async () => {
     fetch("./exchangeAbi.json")
       .then((res) => res.json())
       .then(async (data) => {
-        const Exchange = new web3.eth.Contract(
-          data,
-          "0x7a56b4165196fc076011683ee4d75a45c05d7dd8"
-        );
+        const Exchange = new web3.eth.Contract(data, exchangeAddress);
         let price = await Exchange.methods.fetchedPrice().call();
         price = web3.utils.fromWei(price);
         price = (Math.round(price * 100) / 100).toFixed(2);
@@ -26,13 +26,10 @@ $(document).ready(async () => {
     fetch("./exchangeAbi.json")
       .then((res) => res.json())
       .then(async (exchange) => {
-        const Exchange = new web3.eth.Contract(
-          exchange,
-          "0x7a56b4165196fc076011683ee4d75a45c05d7dd8"
-        );
+        const Exchange = new web3.eth.Contract(exchange, exchangeAddress);
         const wallet = localStorage.getItem("wallet");
         await Exchange.methods
-          .buyToken(amount, "0xe9e7cea3dedca5984780bafc599bd69add087d56")
+          .buyToken(amount, tokenAddress)
           .send({ from: wallet });
       });
   };
@@ -40,14 +37,11 @@ $(document).ready(async () => {
     fetch("./bep20abi.json")
       .then((res) => res.json())
       .then(async (data) => {
-        const BUSD = new web3.eth.Contract(
-          data,
-          "0xe9e7cea3dedca5984780bafc599bd69add087d56"
-        );
+        const BUSD = new web3.eth.Contract(data, busdAddress);
         const wallet = localStorage.getItem("wallet");
         let busdBalance = await BUSD.methods.balanceOf(wallet).call();
         BUSD.methods
-          .approve("0x7a56b4165196fc076011683ee4d75a45c05d7dd8", busdBalance)
+          .approve(exchangeAddress, busdBalance)
           .send({ from: wallet });
       });
   };
