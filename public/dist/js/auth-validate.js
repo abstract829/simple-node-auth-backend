@@ -1,4 +1,4 @@
-const apiURL = "http://137.184.104.195/api/users";
+const apiURL = "https://nudara.up.railway.app//api/users";
 
 $(document).ready(async () => {
   const validateToken = async () => {

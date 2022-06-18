@@ -1,4 +1,4 @@
-let apiURL = "http://137.184.104.195/api/users";
+let apiURL = "https://nudara.up.railway.app/api/users";
 
 $(document).ready(async () => {
   $("#login-button").on("click", async () => {
