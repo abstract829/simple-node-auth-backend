@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exchange | Nudara Token</title>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Font Awesome Icons -->
@@ -23,10 +24,7 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="img/logo.png" alt="invester center logo" height="500" width="1300">
-  </div>
-
+ 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
      <!-- Brand Logo -->
@@ -39,7 +37,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <div class="row mb-2">
           <div class="col-sm-12 justify-content-center">
-            <h1 class="m-0 text-center"><i class="icofont-wallet"></i> Exchange Nudara</h1>
+            <h1 class="m-0 text-center"><i class="icofont-wallet"></i></h1>
           </div><!-- /.col -->         
         </div><!-- /.row -->
         
@@ -51,17 +49,12 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-     
-            <!-- Message Start -->
-            
+      <!-- Messages Dropdown Menu -->       
             
       <!-- Notifications Dropdown Menu -->
      
-      </li>
-           
-            
-      <li id="connect-wallet-button"><a href="#" class="btn btn-app bg-warning accion" >Connect Wallet</a></li> 
+      </li>  
+      <li id="connect-wallet-button"><h1 href="#" class="btn btn-app bg-warning accion" >Connect Wallet</h1></li> 
       </li>
     </ul>
     
@@ -72,7 +65,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="wallet.html" class="brand-link">
-      <img src="img/logo.png" alt="" class="brand-image-xl  " style="opacity: 80">
+      <img src="img/logo.png" alt="" class="container" style="opacity: 80">
       <span class="brand-text font-weight-light"></span>
     </a>
 
@@ -89,24 +82,20 @@
       </div>     
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+     
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+         <li class="nav-item">
+            <a href="#" class="nav-item">
               <p>
                 Exchange                 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Staking (Próximamente)               
+            <a href="#" class="nav-item">
+                Staking               
               </p>
             </a>              
         </ul>
@@ -130,7 +119,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header justify-content-center">
-                <h2 class="card-title text-center"><span>Balance</span></h2>                 
+                <h2 class="card-title text-center"><span>Centralized Exchange</span></h2>                 
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -143,39 +132,39 @@
                             <div class="description-block">
                               <div class="caja-saldo">
                                 <h3 class="badge badge-warning saldo"><span>1 NDR</span></h3></br>
-                                <span class="description-text badge badge-warning saldo" id="ndr-price">$58.59</span> 
+                                <span class="description-text badge badge-warning saldo" id="ndr-price"></span> 
                               </div>
                                                          
                             </div>
                             <!-- /.description-block -->
                           </div>                    
                           <div class="col-xs-13 col-sm-4 cripto">
-                            <img src="img/logo-1.png" alt="NDR" class="brand-cripto">  
+                            <img src="img/logo-1.png" alt="NDR" class="container">  
                             <div class="descripcion">
-                              <h3 class="product-title">NUDARA</h3>
-                              <h4 class="description-header" id="ndr-price2">$58.59</h4>
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 0.001%</span>  
+                              <h3 class="product-title"></h3>
+                              <h4 class="description-header"></h4>
+                        
                             </div> 
-                            <p class="description-header">NDR</p>                  
+                            <p class="description-header"></p>                  
                                                        
                           </div>
                           <div class="col-xs-13 col-sm-4 cripto">                                                                                
                             <img src="img/criptos/bnb-bnb-logo.svg" alt="eth" class="brand-cripto">  
                             <div class="descripcion">
                               <h3 class="product-title">BUSD</h3>
-                              <h4 class="description-header">$1.00</h4>
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 0.1%</span>  
+                              <input type="number" name="valor" step="1" value="1" max="999999" required id="input-pagar-busd">
+                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i></span>  
                             </div> 
-                            <p class="description-header">BUSD</p>                                       
+                            <p class="description-header">Usted paga</p>                                       
                           </div> 
                           <div class="col-xs-13 col-sm-4 cripto">                                                                                
-                            <img src="img/criptos/tether-usdt-logo.svg" alt="eth" class="brand-cripto">  
+                            <img src="img/criptos/bnb-bnb-logo.svg" alt="eth" class="brand-cripto">  
                             <div class="descripcion">
-                              <h3 class="product-title">USDT</h3>
-                              <h4 class="description-header">$1.003</h4>
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 0.1%</span>  
+                              <h3 class="product-title">NDR</h3>
+                              <input type="number" name="valor" step="1" value="1" max="999999" required id="input-pagar-ndr">
+                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i></span>  
                             </div> 
-                            <p class="description-header">Tether</p>                                       
+                            <p class="description-header">Usted recibe</p>                                       
                           </div>  
                          
                 <!-- /.card-body -->
@@ -191,7 +180,7 @@
                           <img src="" class="img-circle elevation-2" alt="">
                         </div>
                         <div class="info">                          
-                          <span class="d-block" id="user-text">XXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                          <span class="d-block" id="user-text"></span>
                         </div>
                       </div>
                     </div>
@@ -200,16 +189,16 @@
                   <!-- /.col -->
                   <div class="col-sm-4 col-6">
                     <div class="description-block border-right">
-                      <span class="description-text">Wallet:</span>
-                      <h5 class="description-header" id="wallet-text"> 0x0000000000000000000000000000000000</h5>                  
+                      <span class="description-text">Address</span>
+                      <h5 class="description-header" id="wallet-text"></h5>                  
                     </div>
                     <!-- /.description-block -->
                   </div>
                   <!-- /.col -->
                   <div class="col-sm-4 col-6">
                     <div class="description-block">                       
-                      <span class="description-text">Email</span>
-                      <h5 class="description-header" id="email-text">xxxxxxxxxxxxxx@gmail.com</h5>                      
+                      <span class="description-text">E-mail</span>
+                      <h5 class="description-header" id="email-text"></h5>                      
                     </div>
                     <!-- /.description-block -->
                   </div>
@@ -228,7 +217,7 @@
         <!-- enviar fondos -->
         <div class="row">
           <div class="col-3 col-sm-6 col-md-3">          
-            <div class="info-box" >
+            <div class="info-box">
               <a class="btn btn-app bg-warning accion" id="update-ndr-button">                 
                 <i class="icofont-paper-plane"></i> Actualizar Precio NDR
               </a> 
@@ -250,22 +239,11 @@
 
           <!-- fix for small devices only -->
           <div class="clearfix hidden-md-up"></div>
-          
           <div class="col-3 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <div class="row bg-warning accion btn btn-app p-1" >
-                <div class="col-12">
-                  <div id="buy-ndr-button">
-                    <i class="icofont-exchange"></i> Comprar NDR
-                  </div>
-                  <input type="number"  id="buy-amount" class="mt-1"/>
-
-                </div>
-              </div>
-
-              <!-- <a class="btn btn-app bg-warning accion">  
+              <a class="btn btn-app bg-warning accion" id="buy-ndr-button"">                 
                 <i class="icofont-exchange"></i> Comprar NDR
-              </a>     -->
+              </a>             
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -273,8 +251,10 @@
           <!-- /.col -->
           <div class="col-3 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <a class="btn btn-app bg-warning accion">                 
-                <i class="icofont-sign-out"></i> Salida Segura
+
+              <a class="btn btn-app bg-warning accion" id="salir-btn">                 
+                <i class="icofont-sign-out"></i> 
+                Salida Segura
               </a> 
               <!-- /.info-box-content -->
             </div>
@@ -290,6 +270,8 @@
     </section>
     <!-- /.content -->
   </div>
+  <!-- /.content-wrapper -->
+
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->

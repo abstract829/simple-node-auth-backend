@@ -2,14 +2,14 @@
 body{
   background: #000000;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #000000, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #000000, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .error-msg{
   color:red
 }
 .register-msg{
-  color: yellow;
+  color: rgb(252, 235, 1);
 }
 
 .dark-mode .content-wrapper {
@@ -21,10 +21,10 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 .navbar-dark {
   background-color: #000000;
-  border-color: #000000;
+  border-color: #ECCB0D;
 }
 .brand-link{
-  color: #f2f2f2;
+  color: #ECCB0D;
 }
 .badge-warning {
   color: #ffffff !important;
@@ -43,7 +43,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   width: 100% !important;
 }
 .info a{
-  color: #b7c4d3;
+  color: #000000;
 }
 .info a:hover{
   color: #000000;
@@ -54,7 +54,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
  
 .card-body, .card-header, .dark-mode .card, .dark-mode .info-box{
-  background-color: #001530;
+  background-color: #000000;
 }
 .dark-mode .info-box{
   background-color: #000000;
@@ -66,11 +66,11 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 .dark-mode .products-list>.item {
   background-color: #000000;   
-  border-bottom-color: #6c757d;
+  border-bottom-color: #000000;
 }
 .cripto {
   background-color: #000000;
-  border: 1px solid #ECCB0D;   
+  border: 1px solid #000000;   
   border-radius: 10px;
   padding: 20px;
 }
@@ -116,7 +116,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   z-index:0;
   top: 50%;
   width: 97%;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid rgb(255, 255, 255);
 }
 
 /*********************
@@ -133,8 +133,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 .registrar{
   border-radius: 16px;
-  background-color:#fdc202 !important;
-  border-color: #fdc202;
+  background-color:#000000 !important;
+  border-color: #ECCB0D;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -161,8 +161,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
  }
  .zona1{
    background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ECCB0D, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ECCB0D, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to left, #000000, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  
  }
  .zona2{
@@ -179,7 +179,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 .el-footer {
   background-color: #000000;
   border-top: none;
-  color: #ECCB0D;
+  color: #fdd700;
   padding: 2rem;
 }
 .el-footer a{

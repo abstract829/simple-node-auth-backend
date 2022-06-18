@@ -2,6 +2,7 @@ $(document).ready(async () => {
   const exchangeAddress = "0xda9c9157f7859fb83de0fabf7776554d35599ba7";
   const tokenAddress = "0xa2a5ee61e6a0c993fb5060fa7b8270cc2cdc7c08";
   const busdAddress = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
+  // const busdAddress = "0x55d398326f99059ff775485246999027b3197955";
   const setInitialData = () => {
     const email = localStorage.getItem("email");
     const name = localStorage.getItem("name");
@@ -18,6 +19,7 @@ $(document).ready(async () => {
         let price = await Exchange.methods.fetchedPrice().call();
         price = web3.utils.fromWei(price);
         price = (Math.round(price * 100) / 100).toFixed(2);
+        localStorage.setItem("ndrprice", price);
         $("#ndr-price").html(`$${price}`);
         $("#ndr-price2").html(`$${price}`);
       });
@@ -29,7 +31,7 @@ $(document).ready(async () => {
         const Exchange = new web3.eth.Contract(exchange, exchangeAddress);
         const wallet = localStorage.getItem("wallet");
         await Exchange.methods
-          .buyToken(amount, tokenAddress)
+          .buyToken(amount, busdAddress)
           .send({ from: wallet });
       });
   };
@@ -46,6 +48,16 @@ $(document).ready(async () => {
       });
   };
   const walletConnect = async () => {
+    var provider = new WalletConnectProvider.default({
+      infuraId: "<<YOUR INFURA ID>>",
+      rpc: { 56: "https://bsc-dataseed.binance.org/" },
+    });
+    provider.chainId = 56;
+    provider.enable().then(function (res) {
+      let web3 = new Web3(provider);
+    });
+  };
+  const metamaskConnect = async () => {
     if (window.ethereum) {
       const web3 = new Web3(window.ethereum);
       try {
@@ -65,18 +77,33 @@ $(document).ready(async () => {
       return web3;
     }
   };
+  await metamaskConnect();
+  $("#input-pagar-ndr").on("change", () => {
+    let ndrPrice = localStorage.getItem("ndrprice");
+    let busd = ndrPrice * $("#input-pagar-ndr").val();
+    $("#input-pagar-busd").val(busd);
+  });
+  $("#input-pagar-busd").on("change", () => {
+    let ndrPrice = localStorage.getItem("ndrprice");
+    let ndr = $("#input-pagar-busd").val() / ndrPrice;
+    $("#input-pagar-ndr").val(ndr);
+  });
   $("#connect-wallet-button").on("click", async () => {
     await walletConnect();
   });
   $("#update-ndr-button").on("click", async () => {
     await getAndSetNDRPrice();
+    console.log("precio actualizazdo!");
   });
   $("#aprobar-swap-button").on("click", async () => {
     await BUSDApprove();
   });
+  $("#salir-btn").on("click", async () => {
+    localStorage.clear();
+    window.location.replace("/");
+  });
   $("#buy-ndr-button").on("click", async () => {
-    let amount = $("#buy-amount").val();
-    console.log(amount);
+    let amount = $("#input-pagar-busd").val();
     if (amount <= 0) return;
     amount = web3.utils.toWei(amount);
     await buyToken(amount);
