@@ -10,7 +10,7 @@ const pool = new Pool({
   // database: "dapp-db",
   // port: "5432",
   connectionString:
-    "postgresql://postgres:cIO3xuRsA7DF1oy56l4I@containers-us-west-75.railway.app:5471/railway",
+    "postgresql://postgres:Aj231Td30y5tQQhnI1wq@containers-us-west-61.railway.app:6631/railway",
   ssl: { rejectUnauthorized: false },
 });
 
