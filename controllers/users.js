@@ -17,15 +17,8 @@ const getAllUsers = async (req, res) => {
   }
 };
 const createUser = async (req, res) => {
-  const { name, email, password, walletAddress, perfilId } = req.body;
+  const { name, email, password, perfilId } = req.body;
   try {
-    const verifyAdmin = await pool.query(
-      'SELECT * FROM usuario WHERE "perfilId" = $1',
-      [1]
-    );
-    if (verifyAdmin.rows.length > 0 && Number(perfilId) === 1) {
-      return res.json({ ok: false, msg: "ya existe un administrador" });
-    }
     const verifyEmail = await pool.query(
       "SELECT * FROM usuario WHERE email = $1",
       [email]
@@ -38,8 +31,8 @@ const createUser = async (req, res) => {
     } else {
       const hashedPW = await bcrypt.hash(password, saltRounds);
       await pool.query(
-        `INSERT INTO usuario(name,email,password,"walletAddress","perfilId") VALUES($1,$2,$3,$4,$5)`,
-        [name, email, hashedPW, walletAddress, perfilId]
+        `INSERT INTO usuario(name,email,password,"perfilId") VALUES($1,$2,$3,$4)`,
+        [name, email, hashedPW, perfilId]
       );
       const user = await pool.query("SELECT * FROM usuario WHERE email = $1", [
         email,
@@ -73,12 +66,11 @@ const revalidarToken = async (req, res) => {
   });
 };
 const logearUsuario = async (req, res) => {
-  const { email, password, walletAddress } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await pool.query(
-      `SELECT * FROM usuario WHERE email = $1 AND "walletAddress" = $2`,
-      [email, walletAddress]
-    );
+    const user = await pool.query(`SELECT * FROM usuario WHERE email = $1`, [
+      email,
+    ]);
     if (user.rows.length > 0) {
       const match = await bcrypt.compare(password, user.rows[0].password);
       if (match) {
